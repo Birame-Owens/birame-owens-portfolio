@@ -139,7 +139,8 @@ const certifications = [
     date: "2025",
     description: "Certification professionnelle en support IT couvrant la gestion du matériel, des systèmes d'exploitation, du dépannage et du support client.",
     image: "/google-it-service.png",
-    credentialUrl: "#"
+    credentialUrl: "#",
+    cacheKey: "2025-01-04" // Force rebuild
   }
 ];
 
@@ -189,11 +190,21 @@ const certifications = [
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Fermer la sidebar en premier
     setSidebarOpen(false);
+    
+    // Attendre un peu pour que la sidebar se ferme avant de scroller
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const headerHeight = 80; // Hauteur du header fixe
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
   };
 
   return (
