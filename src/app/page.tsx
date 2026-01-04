@@ -267,8 +267,8 @@ const certifications = [
         )}
         
         {/* Sidebar */}
-        <aside className={`fixed left-0 top-0 h-full w-72 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-r border-slate-200/50 dark:border-slate-700/50 z-40 transform transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
-          <div className="p-6 pt-20">
+        <aside className={`fixed left-0 top-0 h-full w-72 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-r border-slate-200/50 dark:border-slate-700/50 z-40 transform transition-transform duration-300 overflow-y-auto ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
+          <div className="p-6 pt-20 pb-24">
             <div className="flex flex-col items-center mb-8">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-500 p-1 mb-4">
                 <div className="w-full h-full rounded-full overflow-hidden">
