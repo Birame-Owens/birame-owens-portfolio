@@ -132,6 +132,17 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState('hero');
   const [mounted, setMounted] = useState(false);
 
+const certifications = [
+  {
+    title: "Google IT Support Professional",
+    issuer: "Google",
+    date: "2025",
+    description: "Certification professionnelle en support IT couvrant la gestion du matériel, des systèmes d'exploitation, du dépannage et du support client.",
+    image: "/google-it-service.png",
+    credentialUrl: "#"
+  }
+];
+
   // Initialize dark mode from localStorage or system preference
   useEffect(() => {
     setMounted(true);
@@ -156,7 +167,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'certifications', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
       
       for (const section of sections) {
@@ -213,6 +224,9 @@ export default function Home() {
                 </NavItem>
                 <NavItem href="#skills" description="Technologies et outils que je maîtrise">
                   Compétences
+                </NavItem>
+                <NavItem href="#certifications" description="Mes certifications et accréditations professionnelles">
+                  Certifications
                 </NavItem>
                 <NavItem href="#projects" description="Mes réalisations et projets innovants">
                   Projets
@@ -276,6 +290,11 @@ export default function Home() {
                   id: 'skills', 
                   label: 'Compétences', 
                   icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+                },
+                { 
+                  id: 'certifications', 
+                  label: 'Certifications', 
+                  icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 },
                 { 
                   id: 'projects', 
@@ -577,6 +596,70 @@ export default function Home() {
             </div>
           </section>
 
+          {/* Certifications Section */}
+          <section id="certifications" className="py-12 sm:py-20 px-3 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12 sm:mb-16">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-white mb-4">
+                  Certifications & Accréditations
+                </h2>
+                <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
+                <p className="text-base sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed px-4">
+                  Certifications professionnelles validant mon expertise et mon engagement dans l'apprentissage continu
+                </p>
+              </div>
+              
+              <div className="grid lg:grid-cols-1 gap-6 sm:gap-8">
+                {certifications.map((cert, index) => (
+                  <div key={index} className="group bg-gradient-to-r from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl overflow-hidden shadow-xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div className="flex flex-col lg:flex-row items-center gap-8 p-8">
+                      {/* Certification Image */}
+                      <div className="flex-shrink-0 w-full lg:w-64 h-64 lg:h-48 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl overflow-hidden flex items-center justify-center border border-blue-200 dark:border-blue-700">
+                        <Image 
+                          src={cert.image} 
+                          alt={cert.title} 
+                          width={200} 
+                          height={200} 
+                          className="object-contain group-hover:scale-110 transition-transform duration-300 p-4" 
+                        />
+                      </div>
+                      
+                      {/* Certification Details */}
+                      <div className="flex-1">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div>
+                            <h3 className="text-2xl sm:text-3xl font-semibold text-slate-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                              {cert.title}
+                            </h3>
+                            <p className="text-lg text-slate-600 dark:text-slate-400 font-medium">
+                              {cert.issuer}
+                            </p>
+                            <p className="text-sm text-slate-500 dark:text-slate-500 mt-1">
+                              {cert.date}
+                            </p>
+                          </div>
+                        </div>
+                        
+                        <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                          {cert.description}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-3">
+                          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 text-green-800 dark:text-green-200 rounded-lg border border-green-200 dark:border-green-700">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                            </svg>
+                            <span className="font-semibold">Certification validée</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Projects Section */}
           <section id="projects" className="py-12 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm">
             <div className="max-w-6xl mx-auto">
@@ -718,6 +801,7 @@ export default function Home() {
                 <div className="space-y-2">
                   <button onClick={() => scrollToSection('about')} className="block text-slate-300 hover:text-white transition-colors text-sm sm:text-base">À propos</button>
                   <button onClick={() => scrollToSection('skills')} className="block text-slate-300 hover:text-white transition-colors text-sm sm:text-base">Compétences</button>
+                  <button onClick={() => scrollToSection('certifications')} className="block text-slate-300 hover:text-white transition-colors text-sm sm:text-base">Certifications</button>
                   <button onClick={() => scrollToSection('projects')} className="block text-slate-300 hover:text-white transition-colors text-sm sm:text-base">Projets</button>
                   <button onClick={() => scrollToSection('contact')} className="block text-slate-300 hover:text-white transition-colors text-sm sm:text-base">Contact</button>
                 </div>
