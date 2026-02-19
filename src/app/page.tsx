@@ -38,7 +38,7 @@ const TechStack = {
     { name: "Java", logo: "/java.png" },
     { name: "Python", logo: "/python.png" },
     { name: "PHP", logo: "/laravel.webp" },
-    { name: "SQL", logo: "/sql.webp" },
+    { name: "FastAPI", logo: "/fast-api-logo.webp" },
     { name: "React", logo: "/react.webp" },
   ],
   databases: [
@@ -49,16 +49,17 @@ const TechStack = {
     { name: "CouchDB", logo: "/couchedb.png" },
   ],
   bigData: [
-    { name: "Hadoop", logo: "/haddop.jpeg" },
-    { name: "PySpark", logo: "/pyspark.webp" },
-    { name: "Machine Learning", logo: "/machine-learning.jpg" },
+    { name: "Spark", logo: "/pyspark.webp" },
+    { name: "ETL", logo: "/etl logo.jpg" },
+    { name: "DBT", logo: "/dbt logo.jpeg" },
+    { name: "BigQuery", logo: "/google-cloud.jpg" },
   ],
   tools: [
     { name: "Git", logo: "/git.webp" },
     { name: "GitHub", logo: "/GitHub-Emblem.png" },
-    { name: "GitLab", logo: "/gitlab.webp" },
+    { name: "GCP", logo: "/google-cloud.jpg" },
     { name: "Docker", logo: "/docker.jpeg" },
-    { name: "Spring", logo: "/spring-logo.png" },
+    { name: "CI/CD", logo: "/git.webp" },
   ],
 };
 
@@ -436,7 +437,7 @@ const certifications = [
                 </h2>
                 <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
                 <p className="text-base sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed px-4">
-                  Diplômé avec mention Assez Bien, je poursuis mon Master 2 en SIR avec une spécialisation en Business Intelligence. 
+                  Diplômé avec mention Assez Bien, je poursuis mon Master 2 en Business Intelligence. 
                   Mon objectif : devenir expert en analyse de données pour optimiser la prise de décision en entreprise.
                 </p>
               </div>
