@@ -498,6 +498,17 @@ const certifications = [
                     Expérience Professionnelle
                   </h3>
                   <div className="space-y-6">
+                    <div className="border-l-4 border-blue-500 pl-6 bg-blue-50 dark:bg-blue-900/20 rounded-r-lg p-4">
+                      <h4 className="font-semibold text-slate-800 dark:text-white text-lg">Développeur Angular Spring Boot</h4>
+                      <p className="text-slate-600 dark:text-slate-300">Agence Webgram</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">Janvier 2025 – Actuellement</p>
+                      <ul className="mt-3 text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                        <li>• Développement d'applications web full-stack avec Angular et Spring Boot</li>
+                        <li>• Conception et implémentation d'APIs RESTful robustes</li>
+                        <li>• Gestion de bases de données et optimisation des requêtes</li>
+                        <li>• Collaboration avec l'équipe pour la livraison de solutions digitales innovantes</li>
+                      </ul>
+                    </div>
                     <div className="border-l-4 border-purple-500 pl-6 bg-purple-50 dark:bg-purple-900/20 rounded-r-lg p-4">
                       <h4 className="font-semibold text-slate-800 dark:text-white text-lg">Développeur Freelance</h4>
                       <p className="text-slate-600 dark:text-slate-300">Projet de collecte de données (Laravel)</p>
