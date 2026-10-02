@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Owens - Business Intelligence & Data Science Expert",
   description: "Birame Owens Diop - Master 2 Business Intelligence, Data Science, Machine Learning",
   icons: {
-    icon: "/owensphoto.jpg",
+    icon: "/profil-owens.jpg",
   },
 };
 

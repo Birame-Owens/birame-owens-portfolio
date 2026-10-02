@@ -169,7 +169,7 @@ const certifications = [
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'certifications', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'experience', 'skills', 'certifications', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
       
       for (const section of sections) {
@@ -234,6 +234,9 @@ const certifications = [
                 <NavItem href="#about" description="Mon parcours académique et professionnel">
                   À propos
                 </NavItem>
+                <NavItem href="#experience" description="Mon expérience professionnelle">
+                  Expérience
+                </NavItem>
                 <NavItem href="#skills" description="Technologies et outils que je maîtrise">
                   Compétences
                 </NavItem>
@@ -274,7 +277,7 @@ const certifications = [
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-500 p-1 mb-4">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <Image 
-                    src="/owensphoto.jpg" 
+                    src="/profil-owens.jpg" 
                     alt="Birame Owens Diop" 
                     width={128} 
                     height={128}
@@ -297,6 +300,11 @@ const certifications = [
                   id: 'about', 
                   label: 'À propos', 
                   icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                },
+                { 
+                  id: 'experience', 
+                  label: 'Expérience', 
+                  icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7h-4V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM10 5h4v2h-4V5zm-6 6h16" /></svg>
                 },
                 { 
                   id: 'skills', 
@@ -491,7 +499,7 @@ const certifications = [
                 </div>
                 
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-slate-100 dark:border-slate-700">
-                  <h3 className="text-2xl font-semibold text-slate-800 dark:text-white mb-6 flex items-center gap-3">
+                  <h3 id="experience" className="text-2xl font-semibold text-slate-800 dark:text-white mb-6 flex items-center gap-3 scroll-mt-24">
                     <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6z" />
                     </svg>
@@ -499,14 +507,27 @@ const certifications = [
                   </h3>
                   <div className="space-y-6">
                     <div className="border-l-4 border-blue-500 pl-6 bg-blue-50 dark:bg-blue-900/20 rounded-r-lg p-4">
-                      <h4 className="font-semibold text-slate-800 dark:text-white text-lg">Développeur Angular Spring Boot</h4>
-                      <p className="text-slate-600 dark:text-slate-300">Agence Webgram</p>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">Janvier 2025 – Actuellement</p>
+                      <h4 className="font-semibold text-slate-800 dark:text-white text-lg">Data Analyst & Data Engineer</h4>
+                      <p className="text-slate-600 dark:text-slate-300">M-IT Technologie</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">Actuellement · Dakar, Sénégal</p>
                       <ul className="mt-3 text-sm text-slate-600 dark:text-slate-400 space-y-1">
-                        <li>• Développement d'applications web full-stack avec Angular et Spring Boot</li>
-                        <li>• Conception et implémentation d'APIs RESTful robustes</li>
-                        <li>• Gestion de bases de données et optimisation des requêtes</li>
-                        <li>• Collaboration avec l'équipe pour la livraison de solutions digitales innovantes</li>
+                        <li>• Analyse et valorisation des données pour accompagner la prise de décision</li>
+                        <li>• Conception et maintenance de pipelines de données fiables et automatisés</li>
+                        <li>• Préparation, transformation et contrôle de la qualité des données</li>
+                        <li>• Production d&apos;indicateurs et de tableaux de bord adaptés aux besoins métier</li>
+                      </ul>
+                    </div>
+                    <div className="border-l-4 border-blue-500 pl-6 bg-blue-50 dark:bg-blue-900/20 rounded-r-lg p-4">
+                      <h4 className="font-semibold text-slate-800 dark:text-white text-lg">Développeur Full Stack</h4>
+                      <p className="text-slate-600 dark:text-slate-300">Webgram · Dakar, Sénégal</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">Janvier – Juin 2026 · Stage de 6 mois</p>
+                      <ul className="mt-3 text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                        <li>• Conception et développement d&apos;APIs RESTful avec Java Spring Boot</li>
+                        <li>• Intégration d'interfaces web modernes avec Angular</li>
+                        <li>• Administration de bases relationnelles PostgreSQL et MySQL</li>
+                        <li>• Mise en œuvre de pipelines CI/CD avec GitHub Actions et GitLab CI</li>
+                        <li>• Travail en méthode Agile, revues de code et documentation Swagger</li>
+                        <li>• Utilisation d&apos;outils d&apos;IA générative (Claude, GitHub Copilot) pour accélérer le développement</li>
                       </ul>
                     </div>
                     <div className="border-l-4 border-purple-500 pl-6 bg-purple-50 dark:bg-purple-900/20 rounded-r-lg p-4">
